@@ -11,18 +11,7 @@ import os
 
 
 def plot_metrics(epochs, metrics, labels, title, ylabel, filename, breakpoints=None):
-    """
-    Generalized function to plot metrics with optional breakpoint highlighting.
-
-    Args:
-        epochs: List of epoch numbers.
-        metrics: List of metric lists (e.g., [mlp_precision, cnn_precision]).
-        labels: List of labels for the metrics.
-        title: Title of the plot.
-        ylabel: Y-axis label.
-        filename: Filename to save the plot.
-        breakpoints: Optional list of indices to highlight as breakpoints.
-    """
+    
     plt.figure(figsize=(10, 6))
     
     for i, metric in enumerate(metrics):
