@@ -3,17 +3,7 @@ from train import compute_precision_recall_at_k
 
 
 def evaluate_model(model, test_loader, device):
-    """
-    Evaluate the model on the test set.
     
-    Args:
-        model: PyTorch model.
-        test_loader: DataLoader for testing.
-        device: Computation device.
-    
-    Returns:
-        Tuple of (RMSE, MAE).
-    """
     model.eval()
     mse_loss = 0
     mae_loss = 0
@@ -34,18 +24,7 @@ def evaluate_model(model, test_loader, device):
     return rmse, mae
 
 def evaluate_model_with_metrics(model, test_loader, device, k_values=[10, 20, 50]):
-    """
-    Evaluate the model on the test set with additional metrics.
-
-    Args:
-        model: PyTorch model.
-        test_loader: DataLoader for testing.
-        device: Computation device.
-        k_values: List of k values for Precision@k and Recall@k.
-
-    Returns:
-        Dictionary of metrics (RMSE, MAE, Precision@k, Recall@k for each k).
-    """
+   
     rmse, mae = evaluate_model(model, test_loader, device)
     metrics = {"RMSE": rmse, "MAE": mae}
     
