@@ -7,21 +7,7 @@ import pickle
 
 
 def preprocess_data(ratings_path, movies_path, save_encoders=True, batch_size=256):
-    """
-    Preprocess the 1M dataset and save encoders.
-
-    Args:
-        ratings_path (str): Path to ratings dataset.
-        movies_path (str): Path to movies dataset.
-        save_encoders (bool): Whether to save encoders for future use.
-        batch_size (int): Batch size for DataLoader.
-
-    Returns:
-        train_loader (DataLoader): DataLoader for training data.
-        test_loader (DataLoader): DataLoader for testing data.
-        n_users (int): Number of unique users.
-        n_movies (int): Number of unique movies.
-    """
+  
     # Load datasets with appropriate encoding
     print("Loading datasets...")
     ratings = pd.read_csv(ratings_path, delimiter="::", engine="python",
