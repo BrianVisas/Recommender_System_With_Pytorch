@@ -1,19 +1,7 @@
 import torch
 
 def train_model(model, train_loader, criterion, optimizer, device):
-    """
-    Train the model for one epoch.
-    
-    Args:
-        model: PyTorch model.
-        train_loader: DataLoader for training.
-        criterion: Loss function.
-        optimizer: Optimizer.
-        device: Computation device.
-    
-    Returns:
-        Average training loss for the epoch.
-    """
+   
     model.train()
     total_loss = 0
     for batch in train_loader:
@@ -35,20 +23,7 @@ def train_model(model, train_loader, criterion, optimizer, device):
     return average_loss
 
 def compute_precision_recall_at_k(model, test_loader, k=10, threshold=4.0, device=torch.device("cpu")):
-    """
-    Compute Precision@k and Recall@k for the recommendation model.
-
-    Args:
-        model: Trained recommendation model.
-        test_loader: DataLoader for testing.
-        k (int): Number of top recommendations to consider.
-        threshold (float): Rating threshold to classify as relevant.
-        device: Computation device.
-
-    Returns:
-        precision_at_k (float): Average Precision@k across all users.
-        recall_at_k (float): Average Recall@k across all users.
-    """
+   
     precisions = []
     recalls = []
     model.eval()
